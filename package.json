@@ -1,0 +1,39 @@
+{
+  "name": "vite-plugin-windicss-theme",
+  "version": "1.0.0",
+  "description": "Access your WindiCSS theme and colors objects from a vite app.",
+  "author": "Alice Knag",
+  "license": "MIT",
+  "repository": "askalice/vite-plugin-windicss-theme",
+  "main": "dist/plugin.js",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "prepare": "yarn build"
+  },
+  "peerDependencies": {
+    "vite": ">=3.2.0-0",
+    "windicss": ">=3.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "typescript": "^4.0.0",
+    "vite": "^3.2.4",
+    "windicss": "^3.5.6"
+  },
+  "prettier": "@alloc/prettier-config",
+  "keywords": [
+    "vite",
+    "vite-plugin"
+  ],
+  "dependencies": {
+    "@types/node": "^18.11.10",
+    "@windicss/config": "^1.8.8"
+  }
+}
