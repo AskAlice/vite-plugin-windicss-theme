@@ -3,11 +3,16 @@ import type { Plugin } from 'vite'
 import w from 'windicss'
 
 export type PluginConfig = any
-export default (options: LoadConfigurationOptions): Plugin => {
+export default (options?: LoadConfigurationOptions): Plugin => {
   let config = new w().allTheme;
   if(typeof process.env.VITEST === 'undefined'){
-    const loaded = loadConfiguration(options);
-    const config = new w(loaded.config).allTheme;
+    try{
+    const loaded = loadConfiguration(options || {});
+    config = new w(loaded.config).allTheme;
+    }
+    catch(e){
+      config = new w().allTheme;
+    }
   }
   const vmId = 'virtual:windi-theme'
   const resolvedVMId = '\0' + vmId
