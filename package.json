@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-windicss-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Access your WindiCSS theme and colors objects from a vite app.",
   "author": "Alice Knag",
   "license": "MIT",

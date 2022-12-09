@@ -4,11 +4,15 @@ import w from 'windicss'
 
 export type PluginConfig = any
 export default (options: LoadConfigurationOptions): Plugin => {
-  const loaded = loadConfiguration(options);
+  let config = new w().allTheme;
+  if(typeof process.env.VITEST === 'undefined'){
+    const loaded = loadConfiguration(options);
+    const config = new w(loaded.config).allTheme;
+  }
   const vmId = 'virtual:windi-theme'
   const resolvedVMId = '\0' + vmId
 
-  const v = JSON.stringify(new w(loaded.config).allTheme)
+  const v = JSON.stringify(config);
   return {
     name: 'windi-theme',
     resolveId: id => {
